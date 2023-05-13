@@ -18,6 +18,6 @@ public class IndexController {
 
     @RequestMapping("/getUserList")
     public Map<String, Object> getUserList() {
-        return null;
+        return indexService.getUserList();
     }
 }
