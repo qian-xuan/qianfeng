@@ -1,13 +1,19 @@
 package sunshineboy.qianfeng.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import sunshineboy.qianfeng.mapper.IndexMapper;
 import sunshineboy.qianfeng.service.IndexService;
 
 import java.util.Map;
 
+@Service
 public class IndexServiceImpl implements IndexService {
 
+    @Autowired
+    IndexMapper indexMapper;
     @Override
     public Map<String, Object> getUserList() {
-        return null;
+        return indexMapper.getUserList();
     }
 }
