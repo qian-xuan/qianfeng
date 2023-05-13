@@ -1,4 +1,4 @@
-package com.example.qianfeng;
+package sunshineboy.qianfeng;
 
 import org.springframework.javapoet.ClassName;
 
