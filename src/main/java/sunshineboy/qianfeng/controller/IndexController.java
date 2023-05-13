@@ -22,4 +22,10 @@ public class IndexController {
     public Map<String, Object> getUserList() {
         return indexService.getUserList();
     }
+
+    @RequestMapping("/del")
+    public String del(int id) {
+        indexService.del(id);
+        return "index";
+    }
 }

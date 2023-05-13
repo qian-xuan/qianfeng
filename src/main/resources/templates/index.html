@@ -21,20 +21,22 @@
                                 <td>${users[i].hobby}</td>
                                 <td>${users[i].text}</td>
                                 <td>
-                                    <button upd='${users[i].id}' class='upd'>修改</button>
-                                    <button del='${users[i].id}' class='del'>删除</button>
+                                    <button onclick="upd(${users[i].id})" class='upd'>修改</button>
+                                    <button onclick="del(${users[i].id})" class='del'>删除</button>
                                 </td>
                             </tr>`)
                     }
                 },
-                error:function (ref) {
-
-                }
+                error:function (ref) { }
             })
-            $("del").click(function () {
-                alert(this.attr("del"))
-            });
         })
+        function upd(id) {
+            alert(id);
+        }
+        function del(id) {
+            alert(id);
+            location.href=`http://localhost:8090/del?id=${id}`
+        }
     </script>
 </head>
 <body>

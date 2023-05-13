@@ -9,4 +9,6 @@ import java.util.List;
 public interface IndexMapper {
 
     List<User> getUserList();
+
+    int del(int id);
 }

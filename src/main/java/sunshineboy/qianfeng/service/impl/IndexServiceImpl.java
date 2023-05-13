@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Service
 public class IndexServiceImpl implements IndexService {
-
     @Autowired
     IndexMapper indexMapper;
     @Override
@@ -21,5 +20,10 @@ public class IndexServiceImpl implements IndexService {
         List<User> users = indexMapper.getUserList();
         map.put("data", users);
         return map;
+    }
+
+    @Override
+    public void del(int id) {
+        indexMapper.del(id);
     }
 }
