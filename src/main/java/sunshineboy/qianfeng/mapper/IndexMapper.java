@@ -1,11 +1,12 @@
 package sunshineboy.qianfeng.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import sunshineboy.qianfeng.bean.User;
 
-import java.util.Map;
+import java.util.List;
 
 @Mapper
 public interface IndexMapper {
 
-    Map<String, Object> getUserList();
+    List<User> getUserList();
 }

@@ -3,6 +3,7 @@ package sunshineboy.qianfeng.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import sunshineboy.qianfeng.service.IndexService;
 
 import java.util.Map;
@@ -17,6 +18,7 @@ public class IndexController {
     }
 
     @RequestMapping("/getUserList")
+    @ResponseBody
     public Map<String, Object> getUserList() {
         return indexService.getUserList();
     }
