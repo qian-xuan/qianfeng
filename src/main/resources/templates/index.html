@@ -13,32 +13,43 @@
                 success:function (res) {
                     var users = res.data
                     for(var i = 0; i < users.length; i++) {
-                        $("table").append("<tr>" +
-                            "<td>" + users[i].name + "</td>" +
-                            "<td>" + users[i].sex + "</td>" +
-                            "<td>" + users[i].age + "</td>" +
-                            "<td>" + users[i].hobby + "</td>" +
-                            "<td>" + users[i].text + "</td>" +
-                        "</tr>")
+                        $("table").append(
+                            `<tr>
+                                <td>${users[i].name}</td>
+                                <td>${users[i].sex}</td>
+                                <td>${users[i].age}</td>
+                                <td>${users[i].hobby}</td>
+                                <td>${users[i].text}</td>
+                                <td>
+                                    <button upd='${users[i].id}' class='upd'>修改</button>
+                                    <button del='${users[i].id}' class='del'>删除</button>
+                                </td>
+                            </tr>`)
                     }
                 },
                 error:function (ref) {
 
                 }
-
             })
+            $("del").click(function () {
+                alert(this.attr("del"))
+            });
         })
     </script>
 </head>
 <body>
-    <table align="1">
-        <tr>
-            <th>姓名</th>
-            <th>年龄</th>
-            <th>性别</th>
-            <th>爱好</th>
-            <th>简介</th>
-        </tr>
-    </table>
+    <center>
+        <button>新增</button>
+        <table align="1">
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>爱好</th>
+                <th>简介</th>
+                <th>操作</th>
+            </tr>
+        </table>
+    </center>
 </body>
 </html>
