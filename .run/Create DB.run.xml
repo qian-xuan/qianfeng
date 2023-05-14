@@ -2,7 +2,7 @@
   <configuration default="false" name="Create DB" type="DatabaseScript">
     <script-file value="$PROJECT_DIR$/createDB.sql" />
     <script-mode>FILE</script-mode>
-    <data-source id="bc98ad2e-45e3-4dfe-b1bd-3b4e2b57c17a" namespace="database/&quot;postgres&quot;/schema/&quot;public&quot;" />
+    <data-source id="14e58eff-cd33-44f6-bf09-e3b8d8174b0e" />
     <method v="2" />
   </configuration>
 </component>

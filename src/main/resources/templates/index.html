@@ -37,11 +37,14 @@
             alert(id);
             location.href=`http://localhost:8090/del?id=${id}`
         }
+        function add() {
+            location.href="http://localhost:8090/add"
+        }
     </script>
 </head>
 <body>
     <center>
-        <button>新增</button>
+        <button onclick="add()" class="add">新增</button>
         <table align="1">
             <tr>
                 <th>姓名</th>

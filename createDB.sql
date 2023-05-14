@@ -4,7 +4,7 @@ grant all on schema public to postgres;
 grant all on schema public to public;
 
 create table tb_user(
-    id int primary key,
+    id serial primary key,
     name text not null,
     age double precision not null,
     sex text not null,
@@ -12,4 +12,4 @@ create table tb_user(
     "text" text not null
 );
 
-insert into tb_user(id, name, age, sex, hobby, text) VALUES (0, '明日香', 18, '女', '{吃饭, 睡觉, 打真嗣}', '?')
+insert into tb_user(name, age, sex, hobby, text) VALUES ('明日香', 18, '女', '{吃饭, 睡觉, 打真嗣}', '?')

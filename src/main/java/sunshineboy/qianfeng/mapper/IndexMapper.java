@@ -11,4 +11,6 @@ public interface IndexMapper {
     List<User> getUserList();
 
     int del(int id);
+
+    int addUser(User user);
 }
