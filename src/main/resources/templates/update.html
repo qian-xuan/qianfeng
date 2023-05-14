@@ -29,6 +29,7 @@
     <script type="text/javascript">
         (async () => {
             let id = document.querySelector("#id").value
+            if (!id) return
             const res = await fetch(`/getUserById?id=${id}`)
             const user = await res.json()
             document.querySelector("#name").value = user.name

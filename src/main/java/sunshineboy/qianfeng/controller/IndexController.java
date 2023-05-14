@@ -33,7 +33,7 @@ public class IndexController {
 
     @RequestMapping("/add")
     public String add() {
-        return "add";
+        return "update";
     }
 
     @RequestMapping("/saveUser")
