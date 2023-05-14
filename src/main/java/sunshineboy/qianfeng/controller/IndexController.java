@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.User;
 import sunshineboy.qianfeng.service.IndexService;
 
@@ -38,6 +39,26 @@ public class IndexController {
     @RequestMapping("/addUser")
     public String addUser(User user) {
         indexService.addUser(user);
-        return "index";
+        return "redirect:/index";
+    }
+
+     @RequestMapping("/upd")
+     @ResponseBody
+    public ModelAndView upd(int id) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/upd");
+        modelAndView.addObject("id", id);
+        return modelAndView;
+    }
+
+    @RequestMapping("/getUserById")
+    @ResponseBody
+    public User getUserById(int id) {
+        return indexService.getUserById(id);
+    }
+
+    @RequestMapping("/updUser")
+    public String updUser(int id) {
+        return "redirect:/index";
     }
 }

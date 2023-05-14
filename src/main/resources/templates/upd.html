@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        (async () => {
+            let id = $("#id").val();
+            const res = await fetch(`/getUserById${id}`)
+            const user = await res.json()
+            console.log(user)
+            $("#name").val(user.name)
+            $(".sex").map(() => {
+                if(this.value === user.sex)
+                    this.checked = true
+            })
+            $("#age").val(user.age)
+            $(".hobby").ma
+        })()
+    </script>
+</head>
+<body>
+<form action="/updUser" method="post">
+    <input type="text" id="id" hidden="hidden" th:value="${id}">
+    姓名: <input type="text" name="name" id="name"><br>
+    性别: <input type="radio" value="男" name="sex" class="sex">男
+    <input type="radio" value="女" name="sex" class="sex">女<br>
+    年龄：<input type="number" name="age" id="age">
+    爱好：<input type="checkbox" name="hobby" value="抽烟" class="hobby">抽烟
+    <input type="checkbox" name="hobby" value="喝酒" class="hobby">喝酒<br>
+    简介:<textarea name="text" id="text"></textarea><br>
+    <input type="submit" value="新增">
+</form>
+</body>
+</html>

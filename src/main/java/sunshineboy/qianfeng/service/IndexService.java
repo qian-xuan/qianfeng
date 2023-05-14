@@ -10,4 +10,6 @@ public interface IndexService {
     void del(int id);
 
     void addUser(User user);
+
+    User getUserById(int id);
 }

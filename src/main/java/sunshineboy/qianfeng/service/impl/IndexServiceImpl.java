@@ -17,7 +17,7 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public Map<String, Object> getUserList() {
         Map<String, Object> map = new HashMap<>();
-        List<User> users = indexMapper.getUserList();
+        List<User> users = indexMapper.selectList(null);
         map.put("data", users);
         return map;
     }
@@ -36,5 +36,10 @@ public class IndexServiceImpl implements IndexService {
 //             sb.append(",%s".formatted(data[i]));
 
         indexMapper.addUser(user);
+    }
+
+    @Override
+    public User getUserById(int id) {
+        return indexMapper.selectById(id);
     }
 }

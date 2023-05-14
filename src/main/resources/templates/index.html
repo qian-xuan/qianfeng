@@ -24,14 +24,13 @@
             $("table").append(html)
         })()
         function upd(id) {
-            alert(id);
+            location.href=`/upd?id=${id}`
         }
         function del(id) {
-            alert(id);
             location.href=`/del?id=${id}`
         }
         function add() {
-            location.href="http://localhost:8090/add"
+            location.href="/add"
         }
     </script>
 </head>
