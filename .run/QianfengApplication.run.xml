@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="QianfengApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="qianfeng.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="sunshineboy.qianfeng.QianfengApplication" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Run Compose" run_configuration_type="docker-deploy" />
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
