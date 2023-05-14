@@ -1,17 +1,20 @@
 package sunshineboy.qianfeng.bean;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import org.apache.ibatis.type.ArrayTypeHandler;
+import org.apache.ibatis.type.JdbcType;
 
 @Data
-@TableName("tb_user")
+@TableName(value = "tb_user", autoResultMap = true)
+@KeySequence("tb_user_id_seq")
 public class User {
-    @TableId
+    @TableId(type = IdType.AUTO)
     private int id;
     private String name;
     private double age;
     private String sex;
+    @TableField(jdbcType = JdbcType.ARRAY, typeHandler = ArrayTypeHandler.class)
     private String[] hobby;
     private String text;
 }

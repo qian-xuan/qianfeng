@@ -24,7 +24,7 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public void del(int id) {
-        indexMapper.del(id);
+        indexMapper.deleteById(id);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class IndexServiceImpl implements IndexService {
 //         for (int i = 1; i < data.length; i++)
 //             sb.append(",%s".formatted(data[i]));
 
-        indexMapper.addUser(user);
+        indexMapper.insert(user);
     }
 
     @Override
