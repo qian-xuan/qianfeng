@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/saveUser" method="post">
+    <form action="/saveUser" method="post" enctype="multipart/form-data">
         <label>
             姓名：<input type="text" name="name">
         </label><br>
@@ -24,7 +24,7 @@
             简介：<textarea name="text"></textarea>
         </label><br>
         <label>
-            头像：<input type="file" name="avatar">
+            头像：<input type="file" name="avatar" accept="image/*">
         </label><br>
         <input type="submit" value="新增">
     </form>

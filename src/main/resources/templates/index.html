@@ -8,8 +8,18 @@
         (async () => {
             const res = await fetch("/getUserList")
             const users = (await res.json())
-            const html = users.map(user =>
+
+            const html = users.map(user => {
+                console.log(user)
+                let img = ""
+                if (user.avatar) {
+                    const blob = new Blob(user.avatar);
+                    const url = URL.createObjectURL(blob);
+                    img = `<img src="${url}" alt="">`
+                }
+                return (
                 `<tr>
+                    <td>${img}</td>
                     <td>${user.name}</td>
                     <td>${user.sex}</td>
                     <td>${user.age}</td>
@@ -19,8 +29,8 @@
                         <button onclick="upd(${user.id})" class='upd'>修改</button>
                         <button onclick="del(${user.id})" class='del'>删除</button>
                     </td>
-                </tr>`
-            ).join("")
+                </tr>`)
+            }).join("")
             $("table").append(html)
         })()
         function upd(id) {
@@ -39,6 +49,7 @@
         <button onclick="add()" class="add">新增</button>
         <table align="1">
             <tr>
+                <th>头像</th>
                 <th>姓名</th>
                 <th>年龄</th>
                 <th>性别</th>

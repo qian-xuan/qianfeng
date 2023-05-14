@@ -17,4 +17,5 @@ public class User {
     @TableField(jdbcType = JdbcType.ARRAY, typeHandler = ArrayTypeHandler.class)
     private String[] hobby;
     private String text;
+    private String avatar;
 }
