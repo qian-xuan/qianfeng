@@ -5,37 +5,30 @@
     <title>Title</title>
     <script type="text/javascript" th:src= "@{/static/jquery.js}"></script>
     <script type="text/javascript">
-        $(function() {
-            $.ajax({
-                url:"http://localhost:8090/getUserList",
-                dataType:"json",
-                type:"get",
-                success:function (res) {
-                    const users = res.data;
-                    for(let i = 0; i < users.length; i++) {
-                        $("table").append(
-                            `<tr>
-                                <td>${users[i].name}</td>
-                                <td>${users[i].sex}</td>
-                                <td>${users[i].age}</td>
-                                <td>${users[i].hobby}</td>
-                                <td>${users[i].text}</td>
-                                <td>
-                                    <button onclick="upd(${users[i].id})" class='upd'>修改</button>
-                                    <button onclick="del(${users[i].id})" class='del'>删除</button>
-                                </td>
-                            </tr>`)
-                    }
-                },
-                error:function (ref) { }
-            })
-        })
+        (async () => {
+            const res = await fetch("/getUserList")
+            const users = (await res.json()).data
+            const html = users.map(user =>
+                `<tr>
+                    <td>${user.name}</td>
+                    <td>${user.sex}</td>
+                    <td>${user.age}</td>
+                    <td>${user.hobby}</td>
+                    <td>${user.text}</td>
+                    <td>
+                        <button onclick="upd(${user.id})" class='upd'>修改</button>
+                        <button onclick="del(${user.id})" class='del'>删除</button>
+                    </td>
+                </tr>`
+            ).join("")
+            $("table").append(html)
+        })()
         function upd(id) {
             alert(id);
         }
         function del(id) {
             alert(id);
-            location.href=`http://localhost:8090/del?id=${id}`
+            location.href=`/del?id=${id}`
         }
     </script>
 </head>
