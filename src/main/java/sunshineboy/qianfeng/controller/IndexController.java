@@ -2,8 +2,7 @@ package sunshineboy.qianfeng.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.User;
 import sunshineboy.qianfeng.service.IndexService;
@@ -37,7 +36,7 @@ public class IndexController {
     }
 
     @RequestMapping("/saveUser")
-    public String saveUser(User user) {
+    public String saveUser(@ModelAttribute User user) {
         indexService.saveOrUpdate(user);
         return "redirect:/index";
     }

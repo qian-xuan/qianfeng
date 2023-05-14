@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #avatar-img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        async function uploadImg() {
+            const elem = document.querySelector("#avatar-file")
+            if (elem.files.length === 0) return false
+            const file = elem.files[0]
+            const reader = new FileReader()
+            reader.readAsDataURL(file)
+            const url = await new Promise((res, rej) => reader.onloadend = () => res(reader.result))
+            console.log(url)
+            document.querySelector("#avatar").value = url
+            document.querySelector("#avatar-img").src = url
+            return true
+        }
+    </script>
 </head>
 <body>
-    <form action="/saveUser" method="post">
+    <form action="/saveUser" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
         <input type="hidden" id="id" name="id" th:value="${id}">
         <label>
             姓名：<input type="text" name="name" id="name">
@@ -24,17 +44,28 @@
         <label>
             简介：<textarea name="text" id="text"></textarea>
         </label><br>
-        <input type="submit" value="新增">
+        <label>
+            头像：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+        </label><br>
+        <input type="hidden" name="avatar" id="avatar">
+        <img src="" id="avatar-img">
+        <input id="submit" type="submit" value="修改">
     </form>
     <script type="text/javascript">
         (async () => {
             let id = document.querySelector("#id").value
-            if (!id) return
+            if (!id) {
+                document.querySelector("#id").value = 0
+                document.querySelector("#submit").value = "新增"
+                return
+            }
             const res = await fetch(`/getUserById?id=${id}`)
             const user = await res.json()
             document.querySelector("#name").value = user.name
             document.querySelector("#age").value = user.age
             document.querySelector("#text").value = user.text
+            document.querySelector("#avatar").value = user.avatar
+            document.querySelector("#avatar-img").src = user.avatar
 
             document.querySelectorAll(".sex").forEach(e => {
                 if(e.value === user.sex)
