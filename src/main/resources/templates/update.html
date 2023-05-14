@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="text/javascript" th:src= "@{/static/jquery.js}"></script>
 </head>
 <body>
     <form action="/saveUser" method="post">
-        <input type="hidden" id="id" th:value="${id}">
+        <input type="hidden" id="id" name="id" th:value="${id}">
         <label>
             姓名：<input type="text" name="name" id="name">
         </label><br>
