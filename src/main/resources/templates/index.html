@@ -11,8 +11,8 @@
                 dataType:"json",
                 type:"get",
                 success:function (res) {
-                    var users = res.data
-                    for(var i = 0; i < users.length; i++) {
+                    const users = res.data;
+                    for(let i = 0; i < users.length; i++) {
                         $("table").append(
                             `<tr>
                                 <td>${users[i].name}</td>
