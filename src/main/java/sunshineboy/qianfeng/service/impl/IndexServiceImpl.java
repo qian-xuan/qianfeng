@@ -26,4 +26,15 @@ public class IndexServiceImpl implements IndexService {
     public void del(int id) {
         indexMapper.del(id);
     }
+
+    @Override
+    public void addUser(User user) {
+//         String[] data = user.getHobby();
+//         StringBuilder sb = new StringBuilder();
+//         if(data.length > 0) sb.append(data[0]);
+//         for (int i = 1; i < data.length; i++)
+//             sb.append(",%s".formatted(data[i]));
+
+        indexMapper.addUser(user);
+    }
 }

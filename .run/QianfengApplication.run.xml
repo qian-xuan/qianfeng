@@ -4,6 +4,7 @@
     <option name="SPRING_BOOT_MAIN_CLASS" value="sunshineboy.qianfeng.QianfengApplication" />
     <method v="2">
       <option name="RunConfigurationTask" enabled="true" run_configuration_name="Run Compose" run_configuration_type="docker-deploy" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Create DB" run_configuration_type="DatabaseScript" />
       <option name="Make" enabled="true" />
     </method>
   </configuration>
