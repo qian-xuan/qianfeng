@@ -7,7 +7,7 @@
     <script type="text/javascript">
         (async () => {
             const res = await fetch("/getUserList")
-            const users = (await res.json()).data
+            const users = (await res.json())
             const html = users.map(user =>
                 `<tr>
                     <td>${user.name}</td>

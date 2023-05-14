@@ -9,7 +9,7 @@ import org.apache.ibatis.type.JdbcType;
 @TableName(value = "tb_user", autoResultMap = true)
 @KeySequence("tb_user_id_seq")
 public class User {
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.INPUT)
     private int id;
     private String name;
     private double age;

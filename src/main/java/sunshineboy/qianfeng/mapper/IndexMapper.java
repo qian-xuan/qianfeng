@@ -5,5 +5,4 @@ import org.apache.ibatis.annotations.Mapper;
 import sunshineboy.qianfeng.bean.User;
 
 @Mapper
-public interface IndexMapper extends BaseMapper<User> {
-}
+public interface IndexMapper extends BaseMapper<User> { }

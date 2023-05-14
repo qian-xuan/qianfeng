@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.User;
 import sunshineboy.qianfeng.service.IndexService;
 
-import java.util.Map;
+import java.util.List;
 
 @Controller
 public class IndexController {
@@ -21,13 +21,13 @@ public class IndexController {
 
     @RequestMapping("/getUserList")
     @ResponseBody
-    public Map<String, Object> getUserList() {
-        return indexService.getUserList();
+    public List<User> getUserList() {
+        return indexService.list();
     }
 
     @RequestMapping("/del")
     public String del(int id) {
-        indexService.del(id);
+        indexService.removeById(id);
         return "index";
     }
 
@@ -36,9 +36,9 @@ public class IndexController {
         return "add";
     }
 
-    @RequestMapping("/addUser")
-    public String addUser(User user) {
-        indexService.addUser(user);
+    @RequestMapping("/saveUser")
+    public String saveUser(User user) {
+        indexService.saveOrUpdate(user);
         return "redirect:/index";
     }
 
@@ -46,7 +46,7 @@ public class IndexController {
      @ResponseBody
     public ModelAndView upd(int id) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/upd");
+        modelAndView.setViewName("update");
         modelAndView.addObject("id", id);
         return modelAndView;
     }
@@ -54,11 +54,11 @@ public class IndexController {
     @RequestMapping("/getUserById")
     @ResponseBody
     public User getUserById(int id) {
-        return indexService.getUserById(id);
+        return indexService.getById(id);
     }
 
-    @RequestMapping("/updUser")
-    public String updUser(int id) {
-        return "redirect:/index";
-    }
+//    @RequestMapping("/updUser")
+//    public String updUser(int id) {
+//        return "redirect:/index";
+//    }
 }

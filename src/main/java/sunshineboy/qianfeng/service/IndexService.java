@@ -1,15 +1,6 @@
 package sunshineboy.qianfeng.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import sunshineboy.qianfeng.bean.User;
 
-import java.util.Map;
-
-public interface IndexService {
-    Map<String, Object> getUserList();
-
-    void del(int id);
-
-    void addUser(User user);
-
-    User getUserById(int id);
-}
+public interface IndexService extends IService<User> { }

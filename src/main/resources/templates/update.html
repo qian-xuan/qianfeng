@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src= "@{/static/jquery.js}"></script>
+</head>
+<body>
+    <form action="/saveUser" method="post">
+        <input type="hidden" id="id" th:value="${id}">
+        <label>
+            姓名：<input type="text" name="name" id="name">
+        </label><br>
+        <label>
+            性别: <input type="radio" value="男" name="sex" class="sex"> 男
+                <input type="radio" value="女" name="sex" class="sex"> 女
+        </label><br>
+        <label>
+            年龄：<input type="number" name="age" id="age">
+        </label><br>
+        <label>
+            爱好：<input type="checkbox" name="hobby" value="唱" class="hobby"> 唱
+                <input type="checkbox" name="hobby" value="跳" class="hobby"> 跳
+        </label><br>
+        <label>
+            简介：<textarea name="text" id="text"></textarea>
+        </label><br>
+        <input type="submit" value="新增">
+    </form>
+    <script type="text/javascript">
+        (async () => {
+            let id = document.querySelector("#id").value
+            const res = await fetch(`/getUserById?id=${id}`)
+            const user = await res.json()
+            document.querySelector("#name").value = user.name
+            document.querySelector("#age").value = user.age
+            document.querySelector("#text").value = user.text
+
+            document.querySelectorAll(".sex").forEach(e => {
+                if(e.value === user.sex)
+                    e.checked = true
+            })
+
+            document.querySelectorAll(".hobby").forEach(e => {
+                if(user.hobby.find(h => h === e.value))
+                    e.checked = true
+            })
+
+        })()
+    </script>
+</body>
+</html>
