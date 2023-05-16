@@ -28,26 +28,26 @@
     <form action="/commodity/save" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
         <input type="hidden" id="id" name="id" th:value="${id}">
         <label>
-            商品名称：<input type="text" name="name" id="name">
+            商品名称：<input type="text" name="name" id="name" class="form-control">
         </label><br>
         <label>
-            商品价格：<input type="text" name="price" id="price">
+            商品价格：<input type="text" name="price" id="price" class="form-control">
         </label><br>
         <label>
-            商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+            商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()" class="form-control">
         </label><br>
         <div>
             <input type="hidden" name="picture" id="picture">
             <img src="" id="picture-img">
         </div>
         <label>
-            商品状态: <input type="radio" value="已上架" name="status" class="status"> 已上架
-                <input type="radio" value="已上架" name="status" class="status"> 未上架
+            商品状态: <input type="radio" value="已上架" name="status" class="status form-control"> 已上架
+                <input type="radio" value="已上架" name="status" class="status form-control"> 未上架
         </label><br>
         <label>
-            商品库存：<input type="text" name="inventory" id="inventory">
+            商品库存：<input type="text" name="inventory" id="inventory" class="form-control">
         </label><br>
-        <input id="submit" type="submit" value="修改">
+        <input id="submit" type="submit" value="修改" class="btn btn-primary">
     </form>
     <script type="text/javascript">
         (async () => {
