@@ -18,6 +18,7 @@ create table tb_commodity(
     id serial primary key,
     name text not null,
     price int8,
+    status text,
     inventory int4,
     describe text,
     picture text

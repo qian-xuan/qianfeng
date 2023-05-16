@@ -14,6 +14,7 @@ public class Commodity {
     private int id;
     private String name;
     private long price;
+    private String status;
     private int inventory;
     private String describe;
     private String picture;

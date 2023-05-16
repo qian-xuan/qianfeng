@@ -28,6 +28,11 @@ public class PageController {
 //    todo: delete
     @RequestMapping("/navbar")
     public String navbar() {
-        return "navbar";
+        return "/navbar";
+    }
+
+    @RequestMapping("/assignmentIndex")
+    public String assignmentIndex() {
+        return "/assignmentIndex";
     }
 }

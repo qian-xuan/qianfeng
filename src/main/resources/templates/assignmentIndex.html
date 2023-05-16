@@ -8,38 +8,39 @@
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        $(function (){
-            $.ajax({
-                url:"http://localhost:8080/commodity/commodityList",
-                dataType:"json",
-                type:"get",
-                success(res){
-                    let data = res.data;
-                    for(let i=0;i<data.length;i++){
-                        $("table").append(`<tr>
-                                <td>${data[i].commodity_name}</td>
-                                <td>${data[i].commodity_price}</td>
-                                <td><img width="50px" height="50px" src="${data[i].commodity_img}"></td>
-                                <td>${data[i].commodity_status}</td>
-                                <td>${data[i].commodity_num}</td>
-                                <td><button style="" class="btn btn-info" onclick='upd(${data[i].id})'>修改</button>
-                                <button style="" class="btn btn-danger" onclick='del(${data[i].id})'>删除</button>
-                                </td></tr>`)
-                    }
-                },
-                error(ref){
+        (async () => {
+            const res = await fetch("/commodity/commodityList")
+            const commodity = (await res.json())
 
+            const html = commodity.map(c => {
+                let img = ""
+                if (c.avatar) {
+                    img = `<img width="50px" height="50px" class="picture" src="${c.picture}" alt="">`
                 }
-            })
-        })
+                return (
+                `<tr>
+                    <td>${c.name}</td>
+                    <td>${c.price}</td>
+                    <td>${img}</td>
+                    <td>${c.status}</td>
+                    <td>${c.inventory}</td>
+                    <td>
+                        <button style="" class="btn btn-info" onclick="upd(${c.id})">修改</button>
+                        <button style="" class="btn btn-danger" onclick="del(${c.id})">删除</button>
+                    </td>
+                </tr>`)
+            }).join("")
+            $("table").append(html)
+        })()
+
         function add(){
-            location.href="/commodity/commodity_add"
+            location.href="/commodity/add"
         }
         function del(id){
-            location.href="/commodity/commodity_del?id="+id
+            location.href="/commodity/del?id="+id
         }
         function upd(id){
-            location.href="/commodity/commodity_upd?id="+id
+            location.href="/commodity/upd?id="+id
         }
     </script>
     <style>
