@@ -20,7 +20,7 @@ public class CommodityController {
 
     @RequestMapping("/save")
     public String save(Commodity commodity) {
-        service.save(commodity);
+        service.saveOrUpdate(commodity);
         return INDEX;
     }
 
