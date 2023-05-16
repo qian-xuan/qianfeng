@@ -33,4 +33,9 @@ public class CommodityController {
     public List<Commodity> list() {
         return service.list();
     }
+
+    @RequestMapping("/get")
+    public Commodity get(int id) {
+        return service.getById(id);
+    }
 }
