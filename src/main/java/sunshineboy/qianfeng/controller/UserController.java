@@ -2,7 +2,8 @@ package sunshineboy.qianfeng.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.User;
 import sunshineboy.qianfeng.service.IndexService;
@@ -10,13 +11,9 @@ import sunshineboy.qianfeng.service.IndexService;
 import java.util.List;
 
 @Controller
-public class IndexController {
+public class UserController {
     @Autowired
     private IndexService indexService;
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
-    }
 
     @RequestMapping("/getUserList")
     @ResponseBody
@@ -27,18 +24,12 @@ public class IndexController {
     @RequestMapping("/del")
     public String del(int id) {
         indexService.removeById(id);
-        return "index";
+        return "usersInfo";
     }
 
     @RequestMapping("/add")
     public String add() {
         return "update";
-    }
-
-    @RequestMapping("/saveUser")
-    public String saveUser(@ModelAttribute User user) {
-        indexService.saveOrUpdate(user);
-        return "redirect:/index";
     }
 
      @RequestMapping("/upd")
@@ -56,8 +47,10 @@ public class IndexController {
         return indexService.getById(id);
     }
 
-//    @RequestMapping("/updUser")
-//    public String updUser(int id) {
-//        return "redirect:/index";
-//    }
+    @RequestMapping("/userLogin")
+    public String userLogin(int id, String password) {
+        if (indexService.getById(id).getPassword().equals(password))
+            return "redirect:/index";
+        return "redirect:/login";
+    }
 }

@@ -5,6 +5,7 @@ grant all on schema public to public;
 
 create table tb_user(
     id serial primary key,
+    password text not null,
     name text not null,
     age double precision not null,
     sex text not null,
@@ -13,4 +14,4 @@ create table tb_user(
     avatar text
 );
 
-insert into tb_user(name, age, sex, hobby, text) VALUES ('明日香', 18, '女', '{吃饭, 睡觉, 打真嗣}', '?')
+insert into tb_user(name, password, age, sex, hobby, text) VALUES ('明日香', '0',18, '女', '{吃饭, 睡觉, 打真嗣}', '?')

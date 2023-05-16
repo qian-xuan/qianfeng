@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+<form class="container-center" action="/userLogin">
+    <h1 style="margin-bottom: 20px; margin-top: 20px">登录</h1>
+    <p style="display: grid; grid-gap: 10px; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 4fr">
+        <label>用户名:</label><input class="form-control" name="id"/>
+        <label>密码:</label><input class="form-control" name="password" type="password"/>
+    </p>
+    <p>
+        <input type="submit" class="btn btn-primary" value="登录"/>
+        <a href="/register" class="btn btn-secondary"> 注册 </a>
+    </p>
+</form>
+</body>
+</html>

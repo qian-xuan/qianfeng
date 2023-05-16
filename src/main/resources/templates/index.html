@@ -3,64 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        .avatar {
-            width: 50px;
-            height: auto;
-        }
-    </style>
-    <script type="text/javascript" th:src= "@{/static/jquery.js}"></script>
-    <script type="text/javascript">
-        (async () => {
-            const res = await fetch("/getUserList")
-            const users = (await res.json())
-
-            const html = users.map(user => {
-                let img = ""
-                if (user.avatar) {
-                    img = `<img class="avatar" src="${user.avatar}" alt="">`
-                }
-                return (
-                `<tr>
-                    <td>${img}</td>
-                    <td>${user.name}</td>
-                    <td>${user.sex}</td>
-                    <td>${user.age}</td>
-                    <td>${user.hobby}</td>
-                    <td>${user.text}</td>
-                    <td>
-                        <button onclick="upd(${user.id})" class='upd'>修改</button>
-                        <button onclick="del(${user.id})" class='del'>删除</button>
-                    </td>
-                </tr>`)
-            }).join("")
-            $("table").append(html)
-        })()
-        function upd(id) {
-            location.href=`/upd?id=${id}`
-        }
-        function del(id) {
-            location.href=`/del?id=${id}`
-        }
-        function add() {
-            location.href="/add"
-        }
-    </script>
 </head>
 <body>
-    <center>
-        <button onclick="add()" class="add">新增</button>
-        <table align="1">
-            <tr>
-                <th>头像</th>
-                <th>姓名</th>
-                <th>年龄</th>
-                <th>性别</th>
-                <th>爱好</th>
-                <th>简介</th>
-                <th>操作</th>
-            </tr>
-        </table>
-    </center>
+<h6>NOTHING</h6>
 </body>
 </html>

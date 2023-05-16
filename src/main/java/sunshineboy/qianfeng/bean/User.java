@@ -11,6 +11,7 @@ import org.apache.ibatis.type.JdbcType;
 public class User {
     @TableId(type = IdType.INPUT)
     private int id;
+    private String password;
     private String name;
     private double age;
     private String sex;

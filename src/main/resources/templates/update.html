@@ -27,6 +27,9 @@
 <body>
     <form action="/saveUser" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
         <input type="hidden" id="id" name="id" th:value="${id}">
+        <label hidden="hidden" id="passwordLabel">
+            密码：<input type="text" id="password" name="password"><br>
+        </label>
         <label>
             姓名：<input type="text" name="name" id="name">
         </label><br>
@@ -57,10 +60,12 @@
             if (!id) {
                 document.querySelector("#id").value = 0
                 document.querySelector("#submit").value = "新增"
+                document.querySelector("#passwordLabel").hidden = ""
                 return
             }
             const res = await fetch(`/getUserById?id=${id}`)
             const user = await res.json()
+            document.querySelector("#password").value = user.password
             document.querySelector("#name").value = user.name
             document.querySelector("#age").value = user.age
             document.querySelector("#text").value = user.text
