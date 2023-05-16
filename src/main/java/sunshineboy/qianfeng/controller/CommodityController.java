@@ -37,6 +37,7 @@ public class CommodityController {
     }
 
     @RequestMapping("/get")
+    @ResponseBody
     public Commodity get(int id) {
         return service.getById(id);
     }
