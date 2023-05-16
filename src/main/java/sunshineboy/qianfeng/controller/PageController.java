@@ -24,4 +24,10 @@ public class PageController {
     public String usersInfo() {
         return "usersInfo";
     }
+
+//    todo: delete
+    @RequestMapping("/navbar")
+    public String navbar() {
+        return "navbar";
+    }
 }
