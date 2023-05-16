@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #avatar-img {
+        #picture-img {
             width: 50px;
             height: auto;
         }
@@ -19,7 +19,7 @@
             const url = await new Promise((res, rej) => reader.onloadend = () => res(reader.result))
             console.log(url)
             document.querySelector("#picture").value = url
-            document.querySelector("#avatar-img").src = url
+            document.querySelector("#picture-img").src = url
             return true
         }
     </script>
@@ -36,8 +36,10 @@
         <label>
             商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
         </label><br>
-        <input type="hidden" name="picture" id="picture">
-        <img src="" id="picture-img">
+        <div>
+            <input type="hidden" name="picture" id="picture">
+            <img src="" id="picture-img">
+        </div>
         <label>
             商品状态: <input type="radio" value="已上架" name="status" class="status"> 已上架
                 <input type="radio" value="已上架" name="status" class="status"> 未上架
