@@ -14,4 +14,13 @@ create table tb_user(
     avatar text
 );
 
+create table tb_commodity(
+    id serial primary key,
+    name text not null,
+    price int8,
+    inventory int4,
+    describe text,
+    picture text
+);
+
 insert into tb_user(name, password, age, sex, hobby, text) VALUES ('明日香', '0',18, '女', '{吃饭, 睡觉, 打真嗣}', '?')
