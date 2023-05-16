@@ -7,10 +7,10 @@ create table tb_user(
     id serial primary key,
     password text not null,
     name text not null,
-    age double precision not null,
-    sex text not null,
+    age double precision,
+    sex text,
     hobby text[] not null default '{}',
-    "text" text not null,
+    "text" text,
     avatar text
 );
 

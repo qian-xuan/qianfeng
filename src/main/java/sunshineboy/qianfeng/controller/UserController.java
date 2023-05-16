@@ -2,6 +2,7 @@ package sunshineboy.qianfeng.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,6 +46,12 @@ public class UserController {
     @ResponseBody
     public User getUserById(int id) {
         return indexService.getById(id);
+    }
+
+    @RequestMapping("/saveUser")
+    public String saveUser(@ModelAttribute User user) {
+        indexService.saveOrUpdate(user);
+        return "redirect:/index";
     }
 
     @RequestMapping("/userLogin")
