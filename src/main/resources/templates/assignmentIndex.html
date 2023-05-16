@@ -9,7 +9,7 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         (async () => {
-            const res = await fetch("/commodity/commodityList")
+            const res = await fetch("/commodity/list")
             const commodity = (await res.json())
 
             const html = commodity.map(c => {
