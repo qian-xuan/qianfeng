@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +9,12 @@
         #avatar-img {
             width: 50px;
             height: auto;
+        }
+        .form-check-inline {
+            margin-right: 0;
+        }
+        label {
+            margin: .5em 0;
         }
     </style>
     <script type="text/javascript">
@@ -24,36 +32,38 @@
         }
     </script>
 </head>
-<body>
+<body layout:fragment="content">
+<div class="container-center content">
     <form action="/saveUser" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
         <input type="hidden" id="id" name="id" th:value="${id}">
-        <label hidden="hidden" id="passwordLabel">
+        <label style="display: none" id="passwordLabel">
             密码：<input type="text" id="password" name="password"><br>
         </label>
         <label>
-            姓名：<input type="text" name="name" id="name">
+            姓名：<input type="text" name="name" id="name" class="form-control">
         </label><br>
         <label>
-            性别: <input type="radio" value="男" name="sex" class="sex"> 男
-                <input type="radio" value="女" name="sex" class="sex"> 女
+            性别: <input type="radio" value="男" name="sex" class="sex form-check-inline"> 男
+                <input type="radio" value="女" name="sex" class="sex form-check-inline"> 女
         </label><br>
         <label>
-            年龄：<input type="number" name="age" id="age">
+            年龄：<input type="number" name="age" id="age" class="form-control">
         </label><br>
         <label>
-            爱好：<input type="checkbox" name="hobby" value="唱" class="hobby"> 唱
-                <input type="checkbox" name="hobby" value="跳" class="hobby"> 跳
+            爱好：<input type="checkbox" name="hobby" value="唱" class="hobby form-check-inline"> 唱
+                <input type="checkbox" name="hobby" value="跳" class="hobby form-check-inline"> 跳
         </label><br>
         <label>
-            简介：<textarea name="text" id="text"></textarea>
+            简介：<textarea name="text" id="text" class="form-control"></textarea>
         </label><br>
         <label>
             头像：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
         </label><br>
         <input type="hidden" name="avatar" id="avatar">
         <img src="" id="avatar-img">
-        <input id="submit" type="submit" value="修改">
+        <input id="submit" type="submit" value="修改" class="btn btn-primary">
     </form>
+</div>
     <script type="text/javascript">
         (async () => {
             let id = document.querySelector("#id").value

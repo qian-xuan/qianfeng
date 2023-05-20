@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -29,8 +31,8 @@
                     <td>${user.hobby}</td>
                     <td>${user.text}</td>
                     <td>
-                        <button onclick="upd(${user.id})" class='upd'>修改</button>
-                        <button onclick="del(${user.id})" class='del'>删除</button>
+                        <button onclick="upd(${user.id})" class='upd btn btn-secondary'>修改</button>
+                        <button onclick="del(${user.id})" class='del btn btn-danger'>删除</button>
                     </td>
                 </tr>`)
             }).join("")
@@ -48,9 +50,9 @@
     </script>
 </head>
 <body>
-    <center>
-        <button onclick="add()" class="add">新增</button>
-        <table align="1">
+    <div class="container-form" layout:fragment="content">
+        <button onclick="add()" class="add btn btn-primary">新增</button>
+        <table class="table">
             <tr>
                 <th>头像</th>
                 <th>姓名</th>
@@ -61,6 +63,6 @@
                 <th>操作</th>
             </tr>
         </table>
-    </center>
+    </div>
 </body>
 </html>
