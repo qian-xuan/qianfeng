@@ -6,16 +6,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/static/index.css}">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .el-carousel__item h3 {
+            color: #475669;
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 200px;
+            margin: 0;
+        }
+
+        .el-carousel__item:nth-child(2n) {
+            background-color: #99a9bf;
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-color: #d3dce6;
+        }
+        .el-carousel__item{
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body layout:fragment="content">
-<div class="container-form">
-    <input type="text" placeholder="输入关键词搜索电影"
-           class="form-control"/>
+<div id="app" style="width: 1100px;margin-left: 80px">
+    <el-carousel :interval="4000" type="card" height="200px">
+        <el-carousel-item   v-for="item in dataList" :key="item.id" align="center">
+            <h3 ><img :src="item.src" alt="" style="height:200px; width:700px"  /></h3>
+        </el-carousel-item>
+    </el-carousel>
+
 </div>
 <div>
     <h1 th:if="${commodities.isEmpty()}" class="container-center">找不到商品...</h1>
     <div th:unless="${commodities.isEmpty()}" class="container-index">
-        <div class="item" th:each="m : ${commodities}">
+        <div class="card-item" th:each="m : ${commodities}">
             <p>
                 <img class="movie_cover" tabindex="0"
                      th:src="${m.getPicture()}"
@@ -35,5 +62,21 @@
         </div>
     </div>
 </div>
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                dataList: [
+                    {id: 1, src:"https://img.alicdn.com/imgextra/i3/O1CN01Sf6dER1zbJ3uVQ0lE_!!6000000006732-0-tps-846-472.jpg"},
+                    {id: 2, src:"https://gw.alicdn.com/imgextra/i4/O1CN01a71ilU1T2RCTvUXDY_!!6000000002324-0-tps-846-472.jpg"},
+                    {id: 3, src:"https://img.alicdn.com/imgextra/i2/O1CN01XZC8Dd1IUs179sweg_!!6000000000897-2-tps-846-472.png"},
+                ],
+            }
+        }
+    })
+</script>
 </body>
 </html>
