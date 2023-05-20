@@ -11,6 +11,7 @@ import sunshineboy.qianfeng.service.CommodityService;
 import sunshineboy.qianfeng.service.TypeService;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/commodity")
@@ -68,5 +69,11 @@ public class CommodityController {
     @ResponseBody
     public List<Type> getTypes() {
         return typeService.list();
+    }
+
+    @RequestMapping("/getTypeMap")
+    @ResponseBody
+    public Map<Integer, String> getTypeMap() {
+        return typeService.map();
     }
 }
