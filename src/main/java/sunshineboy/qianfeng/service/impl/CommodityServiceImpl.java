@@ -8,4 +8,5 @@ import sunshineboy.qianfeng.service.CommodityService;
 
 @Service
 public class CommodityServiceImpl extends ServiceImpl<CommodityMapper, Commodity> implements CommodityService {
+
 }
