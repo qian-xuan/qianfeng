@@ -18,8 +18,7 @@ public class PageController {
     @RequestMapping("/index")
     public ModelAndView index() {
         var mv = new ModelAndView("/index");
-        var commodities = commodityService.list();
-        mv.addObject("commodities", commodities);
+        mv.addObject("commodities", commodityService.query().eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
         return mv;
     }
@@ -27,7 +26,8 @@ public class PageController {
     @RequestMapping("/type/{tid}")
     public ModelAndView typePage(@PathVariable("tid") int tid) {
         var mv = new ModelAndView("/index");
-        mv.addObject("commodities", commodityService.query().eq("type", tid).list());
+        mv.addObject("commodities",
+                commodityService.query().eq("type", tid).eq("state", "已上架").list());
         mv.addObject("typeMap", typeService.map());
         return mv;
     }
