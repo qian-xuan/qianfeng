@@ -45,7 +45,7 @@
         </label><br>
         <label>
             商品类别：
-            <select name="type" id="type" class="form-control"></select>
+            <select name="type" id="type" class="form-select"></select>
         </label><br>
         <label>
             商品价格：<input type="text" name="price" id="price" class="form-control">
@@ -58,11 +58,11 @@
             <input type="hidden" name="picture" id="picture">
             <img src="" id="picture-img" class="card-img">
         </div>
-        <label>
+        <span>
             商品状态:
-            <span><input type="radio" value="已上架" name="status" class="status form-check-input"> 已上架</span>
-            <span><input type="radio" value="未上架" name="status" class="status form-check-input"> 未上架</span>
-        </label><br>
+            <label><input type="radio" value="已上架" name="status" class="status form-check-input"> 已上架</label>
+            <label><input type="radio" value="未上架" name="status" class="status form-check-input"> 未上架</label>
+        </span><br>
         <label>
             商品库存：<input type="text" name="inventory" id="inventory" class="form-control">
         </label><br>

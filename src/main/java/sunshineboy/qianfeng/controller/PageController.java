@@ -27,7 +27,7 @@ public class PageController {
     public ModelAndView typePage(@PathVariable("tid") int tid) {
         var mv = new ModelAndView("/index");
         mv.addObject("commodities",
-                commodityService.query().eq("type", tid).eq("state", "已上架").list());
+                commodityService.query().eq("type", tid).eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
         return mv;
     }

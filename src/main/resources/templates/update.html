@@ -30,6 +30,10 @@
             document.querySelector("#avatar-img").src = url
             return true
         }
+        function toUpload(){
+            let up = document.getElementById("avatar-file");
+            up.click();
+        }
     </script>
 </head>
 <body layout:fragment="content">
@@ -42,22 +46,23 @@
         <label>
             姓名：<input type="text" name="name" id="name" class="form-control">
         </label><br>
-        <label>
-            性别: <input type="radio" value="男" name="sex" class="sex form-check-inline"> 男
-                <input type="radio" value="女" name="sex" class="sex form-check-inline"> 女
-        </label><br>
+        <span>
+            性别: <label><input type="radio" value="男" name="sex" class="sex form-check-input"> 男</label>
+                <label><input type="radio" value="女" name="sex" class="sex form-check-input"> 女</label>
+        </span><br>
         <label>
             年龄：<input type="number" name="age" id="age" class="form-control">
         </label><br>
-        <label>
-            爱好：<input type="checkbox" name="hobby" value="唱" class="hobby form-check-inline"> 唱
-                <input type="checkbox" name="hobby" value="跳" class="hobby form-check-inline"> 跳
-        </label><br>
+        <span>
+            爱好：<label><input type="checkbox" name="hobby" value="唱" class="hobby form-check-input"> 唱</label>
+                <label><input type="checkbox" name="hobby" value="跳" class="hobby form-check-input"> 跳</label>
+        </span><br>
         <label>
             简介：<textarea name="text" id="text" class="form-control"></textarea>
         </label><br>
         <label>
-            头像：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+            头像：<input style="display: none" type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+            <input type="button" id="toUp" class="btn btn-primary" onclick="toUpload()" value="上传">
         </label><br>
         <input type="hidden" name="avatar" id="avatar">
         <img src="" id="avatar-img">
