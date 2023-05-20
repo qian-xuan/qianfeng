@@ -5,16 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.service.CommodityService;
+import sunshineboy.qianfeng.service.TypeService;
 
 @Controller
 public class PageController {
     @Autowired
-    CommodityService service;
+    CommodityService commodityService;
+    @Autowired
+    TypeService typeService;
     @RequestMapping("/index")
     public ModelAndView index() {
         var mv = new ModelAndView("/index");
-        var commodities = service.list();
+        var commodities = commodityService.list();
         mv.addObject("commodities", commodities);
+        mv.addObject("typeMap", typeService.map());
         return mv;
     }
 
