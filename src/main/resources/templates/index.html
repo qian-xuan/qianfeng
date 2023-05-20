@@ -27,14 +27,19 @@
         .el-carousel__item{
             border-radius: 10px;
         }
+
+        .el-carousel__item, .el-carousel__mask, .el-carousel__container {
+            height: fit-content;
+        }
     </style>
 </head>
 <body layout:fragment="content">
 <div id="app" style="margin: 1.5em auto; width: 90%">
     <el-carousel :interval="4000" type="card">
         <el-carousel-item   v-for="item in dataList" :key="item.id" align="center">
-            <h3 ><img :src="item.src" alt="" style="height:auto; width:100%"  /></h3>
+            <img :src="item.src" alt="" style="height:auto; width:100%"  />
         </el-carousel-item>
+        <img :src="dataList[0].src" alt="" style="height:auto; width:50%; opacity: 0"  />
     </el-carousel>
 
 </div>
