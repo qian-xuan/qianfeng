@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-        
-    </script>
 </head>
 <body id="navbar">
 <div class="top-row-navbar ps-3 navbar navbar-dark">
@@ -68,5 +65,26 @@
         </div>
     </nav>
 </div>
+<script>
+    (async () => {
+        const res = await fetch('/commodity/getTypes')
+        const types = await res.json()
+        const nav = document.querySelector('nav')
+        types.forEach(type => {
+            const elem = document.createElement('div')
+            elem.className = "nav-item px-3"
+            elem.innerHTML = `
+                <a class="nav-link" href="/type/${type.id}" >
+                    <span class="oi"><i class="fas"></i></span> ${type.name}
+                </a>
+            `
+            nav.append(elem)
+        })
+        document.querySelectorAll('.nav-link').forEach(e => {
+            if (e.href === document.location.origin + document.location.pathname)
+                e.classList.add('active')
+        })
+    })()
+</script>
 </body>
 </html>

@@ -1,3 +1,18 @@
+.sidebar {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+    background: rgba(0, 0, 0, 0);
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255, 0.3);
+    border-radius: 4px 4px;
+}
+
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
 }
