@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/site.css}">
+    <link rel="stylesheet" th:href="@{/static/layout.css}">
+    <link th:href="@{/static/navbar.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+<div class="page">
+    <div class="sidebar" th:insert="navbar :: #navbar">
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <div>
+                <span>
+                    <a class="btn btn-primary" href="/login">登录</a>
+                </span>
+                <span class="px-2">
+                    <a class="btn btn-outline-dark" href="/register">注册</a>
+                </span>
+            </div>
+<!--            <div>-->
+<!--                <span class="px-2">-->
+<!--                            <NavLink class="nav" href="/VIP">-->
+<!--                        @if (StateCache.User.VIPExpireTime < DateTime.Now)-->
+<!--                        {-->
+<!--                            @("充值 VIP")-->
+<!--                        }-->
+<!--                        else-->
+<!--                        {-->
+<!--                            @($"VIP 还剩 {(StateCache.User.VIPExpireTime - DateTime.Now).Days} 天")-->
+<!--                        }-->
+<!--                    </NavLink>-->
+<!--                </span>-->
+<!--                <span class="px-2"><b>@_user.Name</b></span>-->
+<!--                <span class="px-2">-->
+<!--                    <button class="btn btn-outline-dark" style="margin: 0" @onclick="LogoutEvent">登出</button>-->
+<!--                </span>-->
+<!--            </div>-->
+        </div>
+
+        <article class="" layout:fragment="content">
+        </article>
+    </main>
+</div>
+</body>
+</html>

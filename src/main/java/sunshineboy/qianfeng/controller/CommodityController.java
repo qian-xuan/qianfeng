@@ -18,7 +18,7 @@ public class CommodityController {
     @Autowired
     CommodityService service;
 
-    @RequestMapping("/")
+    @RequestMapping("/manage")
     public String index() {
         return "assignmentIndex";
     }

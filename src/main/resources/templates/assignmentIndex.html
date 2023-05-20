@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/static/site.css}">
     <script type="text/javascript">
         (async () => {
             const res = await fetch("/commodity/list")
@@ -51,7 +51,7 @@
     </style>
 </head>
 <body>
-<div class="container-form">
+<div class="container-form" layout:fragment="content">
     <button type="button"
             onclick="add()"
             style="margin-top: 60px"
