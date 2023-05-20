@@ -35,4 +35,9 @@ public class PageController {
     public String assignmentIndex() {
         return "/assignmentIndex";
     }
+
+    @RequestMapping("/layout")
+    public String layout() {
+        return "/layout";
+    }
 }

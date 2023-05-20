@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/static/site.css}">
     <style>
         #picture-img {
             width: 50px;
             height: auto;
+        }
+        .status {
+            margin-right: 0;
+        }
+        label {
+            margin: .5em 0;
         }
     </style>
     <script type="text/javascript">
@@ -27,38 +33,33 @@
         }
     </script>
 </head>
-<body>
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-4 column"></div>
-        <div class="col-md-4 column">
-            <form action="/commodity/save" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
-                <input type="hidden" id="id" name="id" th:value="${id}">
-                <label>
-                    商品名称：<input type="text" name="name" id="name">
-                </label><br>
-                <label>
-                    商品价格：<input type="text" name="price" id="price">
-                </label><br>
-                <label>
-                    商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
-                </label><br>
-                <div>
-                    <input type="hidden" name="picture" id="picture">
-                    <img src="" id="picture-img">
-                </div>
-                <label>
-                    商品状态: <input type="radio" value="已上架" name="status" class="status"> 已上架
-                        <input type="radio" value="已上架" name="status" class="status"> 未上架
-                </label><br>
-                <label>
-                    商品库存：<input type="text" name="inventory" id="inventory">
-                </label><br>
-                <input id="submit" type="submit" value="修改">
-            </form>
+<body layout:fragment="content">
+<div class="container-center content">
+    <form action="/commodity/save" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
+        <input type="hidden" id="id" name="id" th:value="${id}">
+        <label>
+            商品名称：<input type="text" name="name" id="name" class="form-control">
+        </label><br>
+        <label>
+            商品价格：<input type="text" name="price" id="price" class="form-control">
+        </label><br>
+        <label>
+            商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+        </label><br>
+        <div>
+            <input type="hidden" name="picture" id="picture">
+            <img src="" id="picture-img">
         </div>
-        <div class="col-md-4 column"></div>
-    </div>
+        <label>
+            商品状态:
+            <span><input type="radio" value="已上架" name="status" class="status form-check-inline"> 已上架</span>
+            <span><input type="radio" value="已上架" name="status" class="status form-check-inline"> 未上架</span>
+        </label><br>
+        <label>
+            商品库存：<input type="text" name="inventory" id="inventory" class="form-control">
+        </label><br>
+        <input id="submit" type="submit" value="修改" class="btn btn-primary">
+    </form>
 </div>
     <script type="text/javascript">
         (async () => {
@@ -73,6 +74,7 @@
             document.querySelector("#name").value = commodity.name
             document.querySelector("#price").value = commodity.price
             document.querySelector("#inventory").value = commodity.inventory
+            document.querySelector("#picture").value = commodity.picture
             document.querySelector("#picture-img").src = commodity.picture
 
             document.querySelectorAll(".status").forEach(e => {
