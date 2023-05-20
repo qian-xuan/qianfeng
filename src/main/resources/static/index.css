@@ -3,15 +3,15 @@
     height: auto;
 }
 
-.item:hover {
+.card-item:hover {
     box-shadow: 0 0 0 4px rgb(13 110 253 / 25%);
 }
 
-.item:focus {
+.card-item:focus {
     box-shadow: 0 0 8px 5px rgb(13 110 253 / 50%);
 }
 
-.item {
+.card-item {
     width: 100%;
     margin: 30px auto;
     /*display: flex;*/
@@ -26,11 +26,11 @@
     cursor: pointer;
 }
 
-.item:first-child {
+.card-item:first-child {
     margin-top: 0;
 }
 
-.item:last-child {
+.card-item:last-child {
     margin-bottom: 0;
 }
 
