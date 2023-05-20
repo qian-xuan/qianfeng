@@ -7,7 +7,7 @@
     <title>Title</title>
     <style>
         #picture-img {
-            width: 50px;
+            width: 200px;
             height: auto;
         }
         .status {
@@ -45,7 +45,7 @@
         </label><br>
         <label>
             商品类别：
-            <select name="type" id="type"></select>
+            <select name="type" id="type" class="form-control"></select>
         </label><br>
         <label>
             商品价格：<input type="text" name="price" id="price" class="form-control">
@@ -56,12 +56,12 @@
         </label><br>
         <div>
             <input type="hidden" name="picture" id="picture">
-            <img src="" id="picture-img">
+            <img src="" id="picture-img" class="card-img">
         </div>
         <label>
             商品状态:
-            <span><input type="radio" value="已上架" name="status" class="status form-check-inline"> 已上架</span>
-            <span><input type="radio" value="已上架" name="status" class="status form-check-inline"> 未上架</span>
+            <span><input type="radio" value="已上架" name="status" class="form-check-input"> 已上架</span>
+            <span><input type="radio" value="已上架" name="status" class="form-check-input"> 未上架</span>
         </label><br>
         <label>
             商品库存：<input type="text" name="inventory" id="inventory" class="form-control">
@@ -79,6 +79,7 @@
                 let element = document.createElement('option')
                 element.value = e.id
                 element.innerText = e.name
+                element.className = 'form-text'
                 type.append(element)
             })
 
