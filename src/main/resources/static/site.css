@@ -86,8 +86,8 @@ blockquote {
 }
 
 .form-control {
-    /*display: inline;*/
-    /*width: auto;*/
+    display: inline;
+    width: auto;
 }
 
 .valid.modified:not([type=checkbox]) {

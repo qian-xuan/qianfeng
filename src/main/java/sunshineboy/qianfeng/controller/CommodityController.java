@@ -13,14 +13,19 @@ import java.util.List;
 @Controller
 @RequestMapping("/commodity")
 public class CommodityController {
-    public static final String INDEX = "redirect:/assignmentIndex";
+    public static final String INDEX = "redirect:/commodity/";
     public static final String UPDATE = "assignmentUpdate";
     @Autowired
     CommodityService service;
 
+    @RequestMapping("/")
+    public String index() {
+        return "assignmentIndex";
+    }
+
     @RequestMapping("/save")
     public String save(Commodity commodity) {
-        service.save(commodity);
+        service.saveOrUpdate(commodity);
         return INDEX;
     }
 
