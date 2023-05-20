@@ -40,6 +40,10 @@
             商品名称：<input type="text" name="name" id="name" class="form-control">
         </label><br>
         <label>
+            商品类别：
+            <select name="type" id="type"></select>
+        </label><br>
+        <label>
             商品价格：<input type="text" name="price" id="price" class="form-control">
         </label><br>
         <label>
@@ -62,6 +66,17 @@
 </div>
     <script type="text/javascript">
         (async () => {
+            const type = document.querySelector("#type");
+            const typeRes = await fetch("/commodity/getTypes")
+            const types = await typeRes.json()
+
+            types.forEach(e => {
+                let element = document.createElement('option')
+                element.value = e.id
+                element.innerText = e.name
+                type.append(element)
+            })
+
             let id = document.querySelector("#id").value
             if (!id) {
                 document.querySelector("#id").value = 0

@@ -6,17 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.Commodity;
+import sunshineboy.qianfeng.bean.Type;
 import sunshineboy.qianfeng.service.CommodityService;
+import sunshineboy.qianfeng.service.TypeService;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/commodity")
 public class CommodityController {
-    public static final String INDEX = "redirect:/commodity/";
-    public static final String UPDATE = "assignmentUpdate";
+    public static final String INDEX = "redirect:/commodity/manage";
+    public static final String UPDATE = "commodityUpdate";
     @Autowired
     CommodityService service;
+
+    @Autowired
+    TypeService typeService;
 
     @RequestMapping("/manage")
     public String index() {
@@ -57,5 +62,11 @@ public class CommodityController {
         var mv = new ModelAndView(UPDATE);
         mv.addObject("id", id);
         return mv;
+    }
+
+    @RequestMapping("/getTypes")
+    @ResponseBody
+    public List<Type> getTypes() {
+        return typeService.list();
     }
 }

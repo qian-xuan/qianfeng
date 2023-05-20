@@ -19,7 +19,7 @@ create table tb_type(
     name text not null
 );
 
-insert into tb_type values (0, '');
+insert into tb_type values (0, '其他');
 
 create table tb_commodity(
     id serial primary key,
@@ -34,7 +34,7 @@ create table tb_commodity(
 
 insert into tb_user(name, password, age, sex, hobby, text) VALUES ('明日香', '0',18, '女', '{吃饭, 睡觉, 打真嗣}', '?');
 
-insert into tb_type(name) values ('女装'),('内衣'),('奢品'),
+insert into tb_type(name) VALUES ('女装'),('内衣'),('奢品'),
                                  ('女鞋'),('男鞋'),('箱包'),
                                  ('美妆'),('饰品'),('洗护'),
                                  ('男装'),('运动'),('百货'),
@@ -42,4 +42,7 @@ insert into tb_type(name) values ('女装'),('内衣'),('奢品'),
                                  ('家装'),('电器'),('车品'),
                                  ('食品'),('生鲜'),('母婴'),
                                  ('医药'),('保健'),('进口');
+
+-- insert into tb_commodity(type, name, price, status, inventory, describe, picture)
+-- VALUES ();
 
