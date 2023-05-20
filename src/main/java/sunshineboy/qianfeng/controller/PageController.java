@@ -1,13 +1,21 @@
 package sunshineboy.qianfeng.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import sunshineboy.qianfeng.service.CommodityService;
 
 @Controller
 public class PageController {
+    @Autowired
+    CommodityService service;
     @RequestMapping("/index")
-    public String index() {
-        return "/index";
+    public ModelAndView index() {
+        var mv = new ModelAndView("/index");
+        var commodities = service.list();
+        mv.addObject("commodities", commodities);
+        return mv;
     }
 
     @RequestMapping("/login")

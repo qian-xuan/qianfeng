@@ -5,8 +5,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/index.css}">
 </head>
 <body layout:fragment="content">
-<h6>NOTHING</h6>
+<div class="container-form">
+    <input type="text" placeholder="输入关键词搜索电影"
+           class="form-control"/>
+</div>
+<div class="container-index">
+    <h1 th:if="${commodities.isEmpty()}" class="container-center">找不到电影...</h1>
+    <div th:unless="${commodities.isEmpty()}">
+        <div class="item" th:each="m : ${commodities}">
+            <p>
+                <a th:href="'/commodity/info/' + ${m.getId()}">
+                    <img class="movie_cover" tabindex="0"
+                         th:src="${m.getPicture()}"
+                         th:alt="'Cover of ' + ${m.getName()}"/>
+                </a>
+            </p>
+            <div>
+                <h3>
+                    <b th:text="${m.getName()}"></b>
+                    <small class="text-secondary px-1" th:text="'￥' + ${m.getPrice()} / 100."></small>
+                </h3>
+<!--                <div class="text-secondary">-->
+<!--                    @if (m.Duration == TimeSpan.Zero)-->
+<!--                    {-->
+<!--                        <span>时长未知</span>-->
+<!--                    }-->
+<!--                    else-->
+<!--                    {-->
+<!--                        <span>@m.Duration.TotalMinutes 分钟</span>-->
+<!--                    }-->
+<!--                    <span class="px-2">@m.Type</span>-->
+<!--                </div>-->
+<!--                @if (StateCache.User is not null && StateCache.User.IsMgr)-->
+<!--                {-->
+<!--                    <div>票房: @((m.BoxOffice / 100.0).ToString("N2"))</div>-->
+<!--                }-->
+<!--                @* <p>@m.Introduction</p> *@-->
+                <p></p>
+<!--                <p style="display: inline-flex; justify-content: center; width: 100%">-->
+<!--                    @if (m.Status == 1)-->
+<!--                    {-->
+<!--                        <button class="btn-primary btn" @onclick="() => ToShowInfo(m.Id)">-->
+<!--                            @(m.ReleaseDate > DateTime.Now ? "预定" : "购票")-->
+<!--                        </button>-->
+<!--                    }-->
+<!--                    else-->
+<!--                    {-->
+<!--                        <button class="btn btn-outline-dark">不在映</button>-->
+<!--                    }-->
+<!--                </p>-->
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
