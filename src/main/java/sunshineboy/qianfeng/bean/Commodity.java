@@ -12,6 +12,7 @@ import lombok.Data;
 public class Commodity {
     @TableId(type = IdType.INPUT)
     private int id;
+    private int type;
     private String name;
     private long price;
     private String status;
