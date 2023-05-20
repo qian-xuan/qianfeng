@@ -43,17 +43,18 @@ insert into tb_type(name) VALUES ('女装'),('内衣'),('奢品'),
                                  ('食品'),('生鲜'),('母婴'),
                                  ('医药'),('保健'),('进口');
 
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (4, '星星板鞋2023新款春季厚底休闲百搭小白鞋原创小众鞋子女', 84, '已上架', 999, '', 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i…1hR5BYgSnVO_!!1065364273.jpg_360x360q90.jpg_.webp');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (4, '2023春秋新款单鞋夏季高跟小香风包头凉鞋', 98, '已上架', 666, '', e'https://g-search3.alicdn.com/img/bao/uploaded/i4/i…2KIAWqfLMK5_!!1950009533.jpg_360x360q90.jpg_.webp
-');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (4, '卓诗尼百凉鞋女士2023年夏季新款水钻一字带坡跟厚底网红松糕', 199, '已上架', 2222, '', 'https://img.alicdn.com/imgextra/i4/2067420190/O1CN…5ZT6Qy1_!!0-saturn_solar.jpg_360x360q90.jpg_.webp');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (4, '华伦V家2023夏季新款尖头黑色铆钉', 169, '已上架', 8888, '', 'https://g-search1.alicdn.com/img/bao/uploaded/i4/i…zE1gypqs_!!2212668881930.jpg_360x360q90.jpg_.webp');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (4, '女粗跟圆头一字带成人礼法式婚纱公主表演礼服单', 60, '已上架', 22, null, e'https://g-search3.alicdn.com/img/bao/uploaded/i4/i…a5oZ0Spu_!!2208304973892.jpg_360x360q90.jpg_.webp
-');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (1, '小耳出品【假日旅行】全棉高密粗斜纹牛仔外套春季新款女短款休闲', 169, '已上架', 34, null, 'https://gw.alicdn.com/bao/upload/O1CN01F1ThqL1xAcot1c7BZ_!!6000000006403-0-yinhe.jpg_Q75.jpg');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (1, '鹿向南《珍妮弗日记》浅蓝色牛仔短外套女2023新款春季设计感小众', 168, '已上架', 900, null, 'https://gw.alicdn.com/bao/upload/O1CN01EVUeAI1aGp13ihb7z_!!6000000003303-0-yinhe.jpg_Q75.jpg');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (1, 'Les Fortes/23SS 原创复古水洗牛仔百褶蛋糕裙抹胸收腰蓬蓬连衣裙', 319, '已上架', 700, null, 'https://gw.alicdn.com/bao/upload/O1CN01mV8Jzc273QlIUaNJ1_!!6000000007741-0-yinhe.jpg_Q75.jpg');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (1, 'AS原创优雅教科书 100%精梳棉 重工立体缩褶收腰大A摆吊带连衣裙', 709, '已上架', 100, null, 'https://gw.alicdn.com/bao/upload/O1CN013aUv541hduIXXuLTa_!!6000000004301-0-yinhe.jpg_Q75.jpg');
-INSERT INTO public.tb_commodity (type, name, price, status, inventory, describe, picture) VALUES (1, 'yesroom千金风裙子女小众设计感杏色木耳边泡泡袖短袖连衣裙女', 155, '已上架', 1000, null, 'https://gw.alicdn.com/bao/upload/O1CN01JobfVf1ZXTo2G07rF_!!6000000003204-0-yinhe.jpg_Q75.jpg');
+
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (6, 1, '小耳出品【假日旅行】全棉高密粗斜纹牛仔外套春季新款女短款休闲', 169, '已上架', 34, null, 'https://gw.alicdn.com/bao/upload/O1CN01F1ThqL1xAcot1c7BZ_!!6000000006403-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (7, 1, '鹿向南《珍妮弗日记》浅蓝色牛仔短外套女2023新款春季设计感小众', 168, '已上架', 900, null, 'https://gw.alicdn.com/bao/upload/O1CN01EVUeAI1aGp13ihb7z_!!6000000003303-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (8, 1, 'Les Fortes/23SS 原创复古水洗牛仔百褶蛋糕裙抹胸收腰蓬蓬连衣裙', 319, '已上架', 700, null, 'https://gw.alicdn.com/bao/upload/O1CN01mV8Jzc273QlIUaNJ1_!!6000000007741-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (9, 1, 'AS原创优雅教科书 100%精梳棉 重工立体缩褶收腰大A摆吊带连衣裙', 709, '已上架', 100, null, 'https://gw.alicdn.com/bao/upload/O1CN013aUv541hduIXXuLTa_!!6000000004301-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (10, 1, 'yesroom千金风裙子女小众设计感杏色木耳边泡泡袖短袖连衣裙女', 155, '已上架', 1000, null, 'https://gw.alicdn.com/bao/upload/O1CN01JobfVf1ZXTo2G07rF_!!6000000003204-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (12, 3, 'ANFEIXITE 原创设计AKOU康康包单肩包 高端定制女包 芝麻色小牛皮', 5338, '已上架', 100, null, 'https://img.alicdn.com/imgextra/i1/3199614975/O1CN01T3Tjt81mcbCmtkcnD_!!0-saturn_solar.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (13, 3, '【三折即刻拍】95新GUCCI 古驰 帆布配皮女士手提包专柜', 2280, '已上架', 99, null, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/O1CN01XC6BEy1lT9TCBjLSd_!!0-paimai.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (14, 5, '安踏毒刺4代丨跑步鞋男2023夏季减震运动鞋网面透气', 399, '已上架', 1000, null, 'https://img.alicdn.com/imgextra/i1/16049769/O1CN01Nq5HsT2M2G0PmkTkA_!!0-saturn_solar.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (15, 5, 'Nike耐克夏季男鞋AIR ZOOM PEGASUS透气舒适运动鞋跑步鞋DV3853', 609, '已上架', 999, null, 'https://img.alicdn.com/imgextra/i2/10160449/O1CN012eZzqm1FBgfuIxWym_!!0-saturn_solar.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (16, 6, 'CeivlmKlain全铝镁合金拉杆箱万向轮行李箱男女密码登机旅行箱子', 308, '已上架', 1000, null, 'https://img.alicdn.com/imgextrahttps://img.alicdn.com/imgextra/i3/3885923289/O1CN01HVZqHL1aAPMz6ZlXr_!!3885923289-0-alimamacc.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (17, 6, '520情人节生日礼物送男友老公背包男士双肩包旅行电脑大学生书包', 199, '已上架', 1000, null, 'https://img.alicdn.com/imgextra/i3/127650663/O1CN01iyIiI61GlhQrFBlk4_!!0-saturn_solar.jpg_360x360q90.jpg');
+
 
 
