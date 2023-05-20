@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/static/site.css">
+    <style>
+        body {
+            background-image: url("/static/image/background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            /*background-size: cover;*/
+        }
+        .block {
+            max-width: 500px;
+
+            margin: 20% 10% auto auto;
+            background: rgba(256, 256, 256, 80%);
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-<form class="container-center" action="/saveUser">
-    <h1 style="margin-bottom: 20px; margin-top: 20px">注册</h1>
-    <p style="display: grid; grid-gap: 10px; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 4fr">
-        <label>用户名:</label><input class="form-control" name="name"/>
-        <label>密码:</label><input class="form-control" name="password" type="password"/>
-    </p>
-    <p>
-        <input type="submit" class="btn btn-primary" value="注册"/>
-    </p>
-</form>
+<div class="block">
+    <form class="container-center" action="/saveUser">
+        <h1 style="margin-bottom: 20px; margin-top: 20px">注册</h1>
+        <p style="display: grid; grid-gap: 10px; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 4fr">
+            <label>用户名:</label><input class="form-control" name="name"/>
+            <label>密码:</label><input class="form-control" name="password" type="password"/>
+        </p>
+        <p>
+            <input type="submit" class="btn btn-primary" value="注册"/>
+        </p>
+    </form>
+</div>
 </body>
 </html>
