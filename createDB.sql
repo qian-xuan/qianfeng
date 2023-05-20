@@ -57,4 +57,6 @@ INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, descr
 INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (17, 6, '520情人节生日礼物送男友老公背包男士双肩包旅行电脑大学生书包', 199, '已上架', 1000, null, 'https://img.alicdn.com/imgextra/i3/127650663/O1CN01iyIiI61GlhQrFBlk4_!!0-saturn_solar.jpg_360x360q90.jpg');
 
 
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (11, 4, '乐福鞋女小众设计感2023春秋新款软皮小皮鞋舒适单鞋上班族一脚蹬', 68, '已上架', 2222, null, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/i2/2253306056/O1CN01nBAJwL1ubhNs7Amj0_!!2253306056.jpg_360x360q90.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (12, 4, 'Jimmy Choo/周仰杰蕾丝网纱高跟鞋水钻水晶尖头', 2680, '已上架', 2222, null, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/2214968076982/O1CN01U49KW521RoA6gvva6_!!2214968076982.jpg_360x360q90.jpg');
 

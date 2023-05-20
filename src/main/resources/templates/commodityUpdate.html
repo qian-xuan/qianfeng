@@ -30,6 +30,10 @@
             document.querySelector("#picture-img").src = url
             return true
         }
+        function toUpload(){
+            let up = document.getElementById("avatar-file");
+            up.click();
+        }
     </script>
 </head>
 <body layout:fragment="content">
@@ -47,7 +51,8 @@
             商品价格：<input type="text" name="price" id="price" class="form-control">
         </label><br>
         <label>
-            商品图片：<input type="file" id="avatar-file" accept="image/*" onchange="uploadImg()">
+            商品图片：<input type="button" id="toUp" class="btn btn-primary" onclick="toUpload()" value="上传图片 ">
+            <input type="file" hidden="hidden" id="avatar-file" accept="image/*" onchange="uploadImg()">
         </label><br>
         <div>
             <input type="hidden" name="picture" id="picture">
