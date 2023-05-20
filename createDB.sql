@@ -50,3 +50,10 @@ INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, descr
 INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (10, 4, '华伦V家2023夏季新款尖头黑色铆钉', 169, '已上架', 8888, '', 'https://g-search1.alicdn.com/img/bao/uploaded/i4/i…zE1gypqs_!!2212668881930.jpg_360x360q90.jpg_.webp');
 INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (11, 4, '女粗跟圆头一字带成人礼法式婚纱公主表演礼服单', 60, '已上架', 22, null, e'https://g-search3.alicdn.com/img/bao/uploaded/i4/i…a5oZ0Spu_!!2208304973892.jpg_360x360q90.jpg_.webp
 ');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (5, 1, '小耳出品【假日旅行】全棉高密粗斜纹牛仔外套春季新款女短款休闲', 169, '已上架', 34, null, 'https://gw.alicdn.com/bao/upload/O1CN01F1ThqL1xAcot1c7BZ_!!6000000006403-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (6, 1, '鹿向南《珍妮弗日记》浅蓝色牛仔短外套女2023新款春季设计感小众', 168, '已上架', 900, null, 'https://gw.alicdn.com/bao/upload/O1CN01EVUeAI1aGp13ihb7z_!!6000000003303-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (4, 1, 'Les Fortes/23SS 原创复古水洗牛仔百褶蛋糕裙抹胸收腰蓬蓬连衣裙', 319, '已上架', 700, '', 'https://gw.alicdn.com/bao/upload/O1CN01mV8Jzc273QlIUaNJ1_!!6000000007741-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (3, 1, 'AS原创优雅教科书 100%精梳棉 重工立体缩褶收腰大A摆吊带连衣裙', 709, '已上架', 100, '', 'https://gw.alicdn.com/bao/upload/O1CN013aUv541hduIXXuLTa_!!6000000004301-0-yinhe.jpg_Q75.jpg');
+INSERT INTO public.tb_commodity (id, type, name, price, status, inventory, describe, picture) VALUES (2, 1, 'yesroom千金风裙子女小众设计感杏色木耳边泡泡袖短袖连衣裙女', 155, '已上架', 1000, '', 'https://gw.alicdn.com/bao/upload/O1CN01JobfVf1ZXTo2G07rF_!!6000000003204-0-yinhe.jpg_Q75.jpg');
+
+
