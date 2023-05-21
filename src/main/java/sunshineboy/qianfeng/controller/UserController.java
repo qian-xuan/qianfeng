@@ -30,14 +30,14 @@ public class UserController {
 
     @RequestMapping("/add")
     public String add() {
-        return "update";
+        return "userUpdate";
     }
 
      @RequestMapping("/upd")
      @ResponseBody
     public ModelAndView upd(int id) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("update");
+        modelAndView.setViewName("userUpdate");
         modelAndView.addObject("id", id);
         return modelAndView;
     }

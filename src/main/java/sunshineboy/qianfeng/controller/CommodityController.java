@@ -6,12 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.Commodity;
-import sunshineboy.qianfeng.bean.Type;
 import sunshineboy.qianfeng.service.CommodityService;
-import sunshineboy.qianfeng.service.TypeService;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/commodity")
@@ -20,9 +17,6 @@ public class CommodityController {
     public static final String UPDATE = "commodityUpdate";
     @Autowired
     CommodityService service;
-
-    @Autowired
-    TypeService typeService;
 
     @RequestMapping("/manage")
     public String index() {
@@ -65,15 +59,10 @@ public class CommodityController {
         return mv;
     }
 
-    @RequestMapping("/getTypes")
+    @RequestMapping("/containsType")
     @ResponseBody
-    public List<Type> getTypes() {
-        return typeService.list();
-    }
-
-    @RequestMapping("/getTypeMap")
-    @ResponseBody
-    public Map<Integer, String> getTypeMap() {
-        return typeService.map();
+    public String containsType(int id) {
+        long res = service.query().eq("type", id).count().intValue();
+        return String.valueOf(res == 0);
     }
 }

@@ -5,5 +5,4 @@ import org.apache.ibatis.annotations.Mapper;
 import sunshineboy.qianfeng.bean.Type;
 
 @Mapper
-public interface TypeMapper extends BaseMapper<Type> {
-}
+public interface TypeMapper extends BaseMapper<Type> { }
