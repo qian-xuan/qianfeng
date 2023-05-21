@@ -1,6 +1,5 @@
 package sunshineboy.qianfeng.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,7 +54,7 @@ public class PageController {
 
     @RequestMapping("/assignmentIndex")
     public String assignmentIndex() {
-        return "/assignmentIndex";
+        return "commodityIndex";
     }
 
     @RequestMapping("/layout")
