@@ -34,11 +34,15 @@
             let up = document.getElementById("avatar-file");
             up.click();
         }
+        function beforeSubmit() {
+            uploadImg()
+            document.querySelector('#price').value *= 100
+        }
     </script>
 </head>
 <body layout:fragment="content">
 <div class="container-center content">
-    <form action="/commodity/save" method="post" enctype="multipart/form-data" onsubmit="uploadImg()">
+    <form action="/commodity/save" method="post" enctype="multipart/form-data" onsubmit="beforeSubmit()">
         <input type="hidden" id="id" name="id" th:value="${id}">
         <label>
             商品名称：<input type="text" name="name" id="name" class="form-control">
@@ -92,7 +96,7 @@
             const res = await fetch(`/commodity/get?id=${id}`)
             const commodity = await res.json()
             document.querySelector("#name").value = commodity.name
-            document.querySelector("#price").value = commodity.price
+            document.querySelector("#price").value = commodity.price / 100
             document.querySelector("#inventory").value = commodity.inventory
             document.querySelector("#picture").value = commodity.picture
             document.querySelector("#picture-img").src = commodity.picture

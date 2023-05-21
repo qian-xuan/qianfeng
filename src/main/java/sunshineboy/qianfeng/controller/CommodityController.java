@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.bean.Commodity;
 import sunshineboy.qianfeng.service.CommodityService;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -32,6 +33,12 @@ public class CommodityController {
     @RequestMapping("/del")
     public String delete(int id) {
         service.removeById(id);
+        return INDEX;
+    }
+
+    @RequestMapping("/dels")
+    public String deleteAll(int[] id) {
+        for (var i : id) service.removeById(i);
         return INDEX;
     }
 

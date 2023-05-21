@@ -2,6 +2,7 @@ package sunshineboy.qianfeng.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import sunshineboy.qianfeng.service.CommodityService;
@@ -15,7 +16,7 @@ public class PageController {
     TypeService typeService;
     @RequestMapping("/index")
     public ModelAndView index() {
-        var mv = new ModelAndView("/index");
+        var mv = new ModelAndView("index");
         mv.addObject("commodities", commodityService.query().eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
         return mv;
@@ -23,12 +24,12 @@ public class PageController {
 
     @RequestMapping("/login")
     public String login() {
-        return "/login";
+        return "login";
     }
 
     @RequestMapping("/register")
     public String register() {
-        return "/register";
+        return "register";
     }
 
     @RequestMapping("/usersInfo")
@@ -39,7 +40,7 @@ public class PageController {
 //    todo: delete
     @RequestMapping("/navbar")
     public String navbar() {
-        return "/navbar";
+        return "navbar";
     }
 
     @RequestMapping("/assignmentIndex")
@@ -49,6 +50,6 @@ public class PageController {
 
     @RequestMapping("/layout")
     public String layout() {
-        return "/layout";
+        return "layout";
     }
 }
