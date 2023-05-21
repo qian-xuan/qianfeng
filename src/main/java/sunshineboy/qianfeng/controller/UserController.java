@@ -25,7 +25,7 @@ public class UserController {
     @RequestMapping("/del")
     public String del(int id) {
         indexService.removeById(id);
-        return "usersInfo";
+        return "usersIndex";
     }
 
     @RequestMapping("/add")
