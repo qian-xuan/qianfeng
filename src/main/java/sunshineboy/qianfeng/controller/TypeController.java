@@ -53,7 +53,7 @@ public class TypeController {
 
     @RequestMapping("/{tid}")
     public ModelAndView typePage(@PathVariable("tid") int tid) {
-        var mv = new ModelAndView("/index");
+        var mv = new ModelAndView("index");
         mv.addObject("commodities",
                 commodityService.query().eq("type", tid).eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
