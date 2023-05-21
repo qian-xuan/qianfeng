@@ -10,6 +10,7 @@ import sunshineboy.qianfeng.bean.Type;
 import sunshineboy.qianfeng.service.CommodityService;
 import sunshineboy.qianfeng.service.TypeService;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +39,12 @@ public class CommodityController {
     @RequestMapping("/del")
     public String delete(int id) {
         service.removeById(id);
+        return INDEX;
+    }
+
+    @RequestMapping("/dels")
+    public String deleteAll(int[] id) {
+        for (var i : id) service.removeById(i);
         return INDEX;
     }
 

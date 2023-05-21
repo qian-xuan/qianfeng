@@ -19,14 +19,15 @@
                 }
                 return (
                 `<tr class="card-sub">
+                    <td><input type="checkbox" class="form-check-input" name="id" value="${c.id}"/></td>
                     <td>${c.name}</td>
                     <td style="width: 80px;text-align: center;">${c.price/100}</td>
                     <td>${img}</td>
                     <td style="width: 80px;text-align: center;">${c.status}</td>
                     <td style="width: 50px;text-align: center;">${c.inventory}</td>
                     <td style="text-align: center;width: 200px;">
-                        <button style="" class="btn btn-warning" onclick="upd(${c.id})">修改</button>
-                        <button style="" class="btn btn-danger" onclick="del(${c.id})">删除</button>
+                        <button type="button" style="" class="btn btn-warning" onclick="upd(${c.id})">修改</button>
+                        <button type="button" style="" class="btn btn-danger" onclick="del(${c.id})">删除</button>
                     </td>
                 </div></tr>`)
             }).join("")
@@ -110,15 +111,18 @@
 <body>
 
 <div class="container-form" layout:fragment="content">
-    <button type="button"
-            onclick="add()"
-            class="btn btn-primary" style="text-align: center;">
-        新增</button>
     <div class="card" id="app">
-        <div class="card-body">
+        <form class="card-body" action="/commodity/dels">
+            <button type="button"
+                    onclick="add()"
+                    class="btn btn-primary" style="text-align: center;">
+                新增</button>
+            <input type="submit"
+                    class="btn btn-danger" style="text-align: center;" value="批量删除"/>
             <table class="card-table">
                 <thead>
                 <tr style="color: #BA7E7E;text-align: center;background: #f5f7f8;">
+                    <th class="th"></th>
                     <th class="th">
                         商品名称
                     </th>
@@ -140,7 +144,7 @@
                 </tr>
                 </thead>
             </table>
-        </div>
+        </form>
     </div>
 </div>
 <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
