@@ -26,7 +26,7 @@ public class CommodityController {
 
     @RequestMapping("/manage")
     public String index() {
-        return "assignmentIndex";
+        return "commodityIndex";
     }
 
     @RequestMapping("/save")
