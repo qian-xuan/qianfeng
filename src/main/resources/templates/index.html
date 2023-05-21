@@ -35,11 +35,11 @@
 </head>
 <body layout:fragment="content">
 <div id="app" style="margin: 1.5em auto; width: 90%">
-    <el-carousel :interval="4000" type="card">
+    <el-carousel :interval="4000" :type="type()">
         <el-carousel-item   v-for="item in dataList" :key="item.id" align="center">
             <img :src="item.src" alt="" style="height:auto; width:100%"  />
         </el-carousel-item>
-        <img :src="dataList[0].src" alt="" style="height:auto; width:50%; opacity: 0"  />
+        <img :src="dataList[0].src" alt="" :style="style()"  />
     </el-carousel>
 
 </div>
@@ -69,16 +69,33 @@
 <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
-    new Vue({
+    const app = new Vue({
         el: '#app',
         data: function() {
+            const card = document.querySelector('main').clientWidth > 800
             return {
                 dataList: [
                     {id: 1, src:"https://img.alicdn.com/imgextra/i3/O1CN01Sf6dER1zbJ3uVQ0lE_!!6000000006732-0-tps-846-472.jpg"},
                     {id: 2, src:"https://gw.alicdn.com/imgextra/i4/O1CN01a71ilU1T2RCTvUXDY_!!6000000002324-0-tps-846-472.jpg"},
                     {id: 3, src:"https://img.alicdn.com/imgextra/i2/O1CN01XZC8Dd1IUs179sweg_!!6000000000897-2-tps-846-472.png"},
                 ],
+                card,
+                type: () => this.card ? "card" : "",
+                style: () => this.card ? "height:auto; width:50%; opacity: 0" : "height:auto; width:100%; opacity: 0",
             }
+        },
+        methods: {
+            update() {
+                this.card = document.querySelector('main').clientWidth > 800
+            }
+        },
+        mounted() {
+            window.addEventListener('resize', this.update)
+            window.addEventListener('focus', this.update)
+        },
+        unmounted() {
+            window.removeEventListener('resize', this.update)
+            window.removeEventListener('focus', this.update)
         }
     })
 </script>
