@@ -55,8 +55,9 @@ public class UserController {
     }
 
     @RequestMapping("/userLogin")
-    public String userLogin(int id, String password) {
-        if (indexService.getById(id).getPassword().equals(password))
+    public String userLogin(String name, String password) {
+        var l = indexService.query().eq("name", name).list();
+        if (!l.isEmpty() && l.get(0).getPassword().equals(password))
             return "redirect:/index";
         return "redirect:/login";
     }
