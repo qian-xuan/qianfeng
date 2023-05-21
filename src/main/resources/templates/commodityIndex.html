@@ -22,7 +22,7 @@
                     <td>${c.name}</td>
                     <td style="width: 80px;text-align: center;">${c.price/100}</td>
                     <td>${img}</td>
-                    <td style="width: 50px;">${c.status}</td>
+                    <td style="width: 80px;text-align: center;">${c.status}</td>
                     <td style="width: 50px;text-align: center;">${c.inventory}</td>
                     <td style="text-align: center;width: 200px;">
                         <button style="" class="btn btn-warning" onclick="upd(${c.id})">修改</button>
@@ -81,21 +81,29 @@
             background: #ffffff;
         }
         
-        /* 让表格中的文字在必要时换行 */
         .card-table {
             word-break: break-all;
             width: 100%;
         }
-        
-        .card-body tr {
-            border-bottom: 1px solid black;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            border-radius: 20px;
-        }
 
         .card-sub{
             background: #ffffff;
+            height: 150px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            outline: 0;
+        }
+        
+        .card-sub img{
+            border-radius: 5px;
+            width: 100px;
+            height: auto;
+        }
+        
+        .card-sub:hover{
+            outline: 2px ridge rgba(186, 126, 126, 0.6);
+            border-radius: 2rem;
         }
     </style>
 </head>
