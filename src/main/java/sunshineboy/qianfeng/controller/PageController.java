@@ -17,7 +17,7 @@ public class PageController {
     TypeService typeService;
     @RequestMapping("/index")
     public ModelAndView index() {
-        var mv = new ModelAndView("/index");
+        var mv = new ModelAndView("index");
         mv.addObject("commodities", commodityService.query().eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
         return mv;
@@ -25,7 +25,7 @@ public class PageController {
 
     @RequestMapping("/type/{tid}")
     public ModelAndView typePage(@PathVariable("tid") int tid) {
-        var mv = new ModelAndView("/index");
+        var mv = new ModelAndView("index");
         mv.addObject("commodities",
                 commodityService.query().eq("type", tid).eq("status", "已上架").list());
         mv.addObject("typeMap", typeService.map());
@@ -34,12 +34,12 @@ public class PageController {
 
     @RequestMapping("/login")
     public String login() {
-        return "/login";
+        return "login";
     }
 
     @RequestMapping("/register")
     public String register() {
-        return "/register";
+        return "register";
     }
 
     @RequestMapping("/usersInfo")
@@ -50,16 +50,16 @@ public class PageController {
 //    todo: delete
     @RequestMapping("/navbar")
     public String navbar() {
-        return "/navbar";
+        return "navbar";
     }
 
     @RequestMapping("/assignmentIndex")
     public String assignmentIndex() {
-        return "/assignmentIndex";
+        return "assignmentIndex";
     }
 
     @RequestMapping("/layout")
     public String layout() {
-        return "/layout";
+        return "layout";
     }
 }
